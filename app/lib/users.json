@@ -1,18 +1,18 @@
 [
   {
-    "id": 1,
+    "id": 1740477323379,
+    "firstname": "Thomas",
+    "lastname": "Carfantan",
+    "email": "test@gmail.com",
+    "pass": "$2b$10$Pw6w8wAvfPBN1Sw3Ym1gC.rkCUMT1nvMkor58w5pr1nCrs0gKLsXC",
+    "role": "customer"
+  },
+  {
+    "id": 1740477482217,
     "firstname": "Thomas",
     "lastname": "Carfantan",
     "email": "tcarfantan11@gmail.com",
-    "pass": "pass",
+    "pass": "$2b$10$73LxxuRctNSL7KKd0a5W4OTWU32i03P2/K1m/.6Sc3TwJA6yrxLLS",
     "role": "admin"
-  },
-  {
-    "id": 1,
-    "firstname": "Thomas",
-    "lastname": "Carfantan",
-    "email": "tcarfantan1@gmail.com",
-    "pass": "pass",
-    "role": ""
   }
 ]

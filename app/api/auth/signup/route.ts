@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import * as fs from "fs";
 import path from "path";
+import bcrypt from "bcrypt";
 
 export async function POST(req: Request) {
   const body = await req.json();
@@ -38,6 +39,7 @@ export async function POST(req: Request) {
     }
 
     // Encrypter le password
+    const hashedPassword = await bcrypt.hash(body.pass, 10);
 
     // Ajouter les nouvelles données à la liste existante
     console.log("email :",body.email);
@@ -47,7 +49,7 @@ export async function POST(req: Request) {
       "firstname": body.firstname,
       "lastname": body.lastname,
       "email": body.email,
-      "pass": body.pass,
+      "pass": hashedPassword,
       "role": "customer"
     } 
     existingData.push(user);

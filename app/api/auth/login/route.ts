@@ -1,6 +1,7 @@
 import { User, UserPayload } from "@/app/lib/dico";
 import { generateAccessToken, generateRefreshToken } from "@/app/lib/user";
 import { NextResponse } from "next/server";
+import bcrypt from "bcrypt";
 
 export async function POST(req: Request) {
     const body = await req.json();
@@ -31,7 +32,8 @@ export async function POST(req: Request) {
         return NextResponse.json({ error: 'User does not exist' }, { status: 400 });
     }
 
-    if (user.pass !== body.password) {
+    const passwordMatch = await bcrypt.compare(body.password, user.pass);
+    if (!passwordMatch) {
         return NextResponse.json({ error: 'Wrong password' }, { status: 400 });
     }
 
